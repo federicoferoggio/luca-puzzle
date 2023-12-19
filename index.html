@@ -39,6 +39,10 @@
             text-align: center;
             font-size: 24px;
         }
+
+        #download-button {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +52,8 @@
     </div>
     <input id="corner-input" type="text" placeholder="Type something...">
     <p id="secret-message">This did something</p>
+    <button id="download-button" download="image.jpg">Download Image</button>
+
     <script>
         document.addEventListener('mousemove', function(e) {
             var input = document.getElementById('corner-input');
@@ -63,6 +69,34 @@
                 document.body.style.backgroundColor = 'white';
                 document.body.style.color = 'black';
                 document.getElementById('secret-message').style.display = 'block';
+            }
+        });
+        (function() {
+            var a = 5, b = 10, c = 15, d = 20, e = 25, f = 30, g = 35, h = 40, i = 45, j = 50;
+            var k = a + b + c + d + e + f + g + h + i + j;
+            var l = k * a * b * c * d * e * f * g * h * i * j;
+            var m = l / a / b / c / d / e / f / g / h / i / j;
+            var n = m % a % b % c % d % e % f % g % h % i % j;
+            var o = n ^ a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j;
+            var p = o & a & b & c & d & e & f & g & h & i & j;
+            var q = p | a | b | c | d | e | f | g | h | i | j;
+            var r = q << a << b << c << d << e << f << g << h << i << j;
+            var s = r >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j;
+            var t = s >>> a >>> b >>> c >>> d >>> e >>> f >>> g >>> h >>> i >>> j;
+            var u = t + a + b + c + d + e + f + g + h + i + j;
+            var v = u - a - b - c - d - e - f - g - h - i - j;
+            var w = v * a * b * c * d * e * f * g * h * i * j;
+            var x = w / a / b / c / d / e / f / g / h / i / j;
+            var y = x % a % b % c % d % e % f % g % h % i % j;
+            var z = y ^ a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j;
+        })();
+
+        document.getElementById('corner-input').addEventListener('input', function(e) {
+            if (e.target.value === 'nadar') {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.getElementById('secret-message').style.display = 'block';
+                document.getElementById('download-button').style.display = 'block';
             }
         });
     </script>
