@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Broken Website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: black; /* Add background color */
+            color: white; /* Add text color */
+        }
+        
+        .center-text {
+            text-align: center;
+        }
+        
+        .main-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .sub-text {
+            font-size: 16px;
+            color: gray;
+        }
+
+        #corner-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        #secret-message {
+            display: none;
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-text">
+        <h1 class="main-text">A Broken Website</h1>
+        <p class="sub-text">But maybe it is still useful for something</p>
+    </div>
+    <input id="corner-input" type="text" placeholder="Type something...">
+    <p id="secret-message">This did something</p>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            var input = document.getElementById('corner-input');
+            if (e.clientX <= 50 && e.clientY <= 50) {
+                input.style.display = 'block';
+            } else {
+                input.style.display = 'none';
+            }
+        });
+
+        document.getElementById('corner-input').addEventListener('input', function(e) {
+            if (e.target.value === 'nadar') {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.getElementById('secret-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
