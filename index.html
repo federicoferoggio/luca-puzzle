@@ -59,7 +59,7 @@
         });
 
         document.getElementById('corner-input').addEventListener('input', function(e) {
-            if (e.target.value === 'nadar') {
+            if (e.target.value.toLowerCase() === 'nadar') { // Compare input value with 'nadar' in a case-insensitive manner
                 document.body.style.backgroundColor = 'white';
                 document.body.style.color = 'black';
                 document.getElementById('secret-message').style.display = 'block';
