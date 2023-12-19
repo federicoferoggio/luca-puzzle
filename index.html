@@ -62,7 +62,51 @@
     <button id="download-button" download="image.jpg" class="text-box">Download Image</button>
 
     <script>
-        var a=5,b=10,c=15,d=20,e=25,f=30,g=35,h=40,i=45,j=50,k=a+b+c+d+e+f+g+h+i+j,l=k*a*b*c*d*e*f*g*h*i*j,m=l/a/b/c/d/e/f/g/h/i/j,n=m%a%b%c%d%e%f%g%h%i%j,o=n^a^b^c^d^e^f^g^h^i^j,p=o&a&b&c&d&e&f&g&h&i&j,q=p|a|b|c|d|e|f|g|h|i|j,r=q<<a<<b<<c<<d<<e<<f<<g<<h<<i<<j,s=r>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j,t=s>>>a>>>b>>>c>>>d>>>e>>>f>>>g>>>h>>>i>>>j,u=t+a+b+c+d+e+f+g+h+i+j,v=u-a-b-c-d-e-f-g-h-i-j,w=v*a*b*c*d*e*f*g*h*i*j,x=w/a/b/c/d/e/f/g/h/i/j,y=x%a%b%c%d%e%f%g%h%i%j,z=y^a^b^c^d^e^f^g^h^i^j;var aa=document.createElement('p');aa.style.display='none',aa.style.textAlign='center',aa.style.fontSize='24px',aa.textContent='This did something',document.body.appendChild(aa);var ab=document.createElement('button');ab.style.display='none',ab.download='image.jpg',ab.textContent='Download Image',document.body.appendChild(ab);document.getElementById('corner-input').addEventListener('input',function(ba){'nadar'===ba.target.value&&(document.body.style.backgroundColor='white',document.body.style.color='black',aa.style.display='block',ab.style.display='block',document.querySelector('.center-text').style.display='none')});
+        document.addEventListener('mousemove', function(e) {
+            var input = document.getElementById('corner-input');
+            if (e.clientX <= 50 && e.clientY <= 50) {
+                input.style.display = 'block';
+            } else {
+                input.style.display = 'none';
+            }
+        });
+
+        document.getElementById('corner-input').addEventListener('input', function(e) {
+            if (e.target.value.toLowerCase() === 'nadar') { // Compare input value with 'nadar' in a case-insensitive manner
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.getElementById('secret-message').style.display = 'block';
+                document.getElementById('download-button').style.display = 'block';
+            }
+        });
+        (function() {
+            var a = 5, b = 10, c = 15, d = 20, e = 25, f = 30, g = 35, h = 40, i = 45, j = 50;
+            var k = a + b + c + d + e + f + g + h + i + j;
+            var l = k * a * b * c * d * e * f * g * h * i * j;
+            var m = l / a / b / c / d / e / f / g / h / i / j;
+            var n = m % a % b % c % d % e % f % g % h % i % j;
+            var o = n ^ a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j;
+            var p = o & a & b & c & d & e & f & g & h & i & j;
+            var q = p | a | b | c | d | e | f | g | h | i | j;
+            var r = q << a << b << c << d << e << f << g << h << i << j;
+            var s = r >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j;
+            var t = s >>> a >>> b >>> c >>> d >>> e >>> f >>> g >>> h >>> i >>> j;
+            var u = t + a + b + c + d + e + f + g + h + i + j;
+            var v = u - a - b - c - d - e - f - g - h - i - j;
+            var w = v * a * b * c * d * e * f * g * h * i * j;
+            var x = w / a / b / c / d / e / f / g / h / i / j;
+            var y = x % a % b % c % d % e % f % g % h % i % j;
+            var z = y ^ a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j;
+        })();
+
+        document.getElementById('corner-input').addEventListener('input', function(e) {
+            if (e.target.value === 'nadar') {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.getElementById('secret-message').style.display = 'block';
+                document.getElementById('download-button').style.display = 'block';
+            }
+        });
     </script>
 </body>
 </html>

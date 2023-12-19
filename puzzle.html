@@ -18,9 +18,6 @@
             transition: transform 0.5s;
         }
         
-        .arrow:hover {
-            transform: rotate(360deg);
-        }
     </style>
 </head>
 <body>
@@ -35,7 +32,7 @@
 
         arrows.forEach(arrow => {
             arrow.addEventListener('click', () => {
-                arrow.style.transform = 'rotate(0deg)';
+                arrow.style.transform = 'rotate(90deg)';
                 currentIndex = (currentIndex + 1) % sequence.length;
                 checkSequence();
             });
