@@ -43,6 +43,13 @@
         #download-button {
             display: none;
         }
+
+        .text-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -50,9 +57,9 @@
         <h1 class="main-text">A Broken Website</h1>
         <p class="sub-text">But maybe it is still useful for something</p>
     </div>
-    <input id="corner-input" type="text" placeholder="Type something...">
-    <p id="secret-message">This did something</p>
-    <button id="download-button" download="image.jpg">Download Image</button>
+    <input id="corner-input" type="text" placeholder="Type something..." class="text-box">
+    <p id="secret-message" class="text-box">This did something</p>
+    <button id="download-button" download="image.jpg" class="text-box">Download Image</button>
 
     <script>
         document.addEventListener('mousemove', function(e) {
