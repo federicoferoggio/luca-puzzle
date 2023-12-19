@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrow Puzzle</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .arrow {
+            color: white;
+            font-size: 50px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        
+        .arrow:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="arrow">➜</div>
+    <div class="arrow">⬆</div>
+    <div class="arrow">⬇</div>
+
+    <script>
+        const arrows = document.querySelectorAll('.arrow');
+        const sequence = ['left', 'up', 'down'];
+        let currentIndex = 0;
+
+        arrows.forEach(arrow => {
+            arrow.addEventListener('click', () => {
+                arrow.style.transform = 'rotate(0deg)';
+                currentIndex = (currentIndex + 1) % sequence.length;
+                checkSequence();
+            });
+        });
+
+        function checkSequence() {
+            const currentArrow = arrows[currentIndex];
+            const expectedDirection = sequence[currentIndex];
+
+            if (currentArrow.innerText.toLowerCase() === expectedDirection) {
+                console.log('Correct sequence!');
+            } else {
+                console.log('Incorrect sequence!');
+            }
+        }
+    </script>
+</body>
+</html>
