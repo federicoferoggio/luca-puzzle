@@ -1,112 +1,93 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>A Broken Website</title>
+    <title>Scrolling Webpage</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             font-family: Arial, sans-serif;
-            background-color: black; /* Add background color */
-            color: white; /* Add text color */
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: black;
         }
-        
-        .center-text {
+
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
-        
-        .main-text {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .sub-text {
-            font-size: 16px;
-            color: gray;
+
+        .arrow {
+            margin-top: 20px;
+            width: 30px;
+            height: 30px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
 
-        #corner-input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: none;
-        }
-
-        #secret-message {
-            display: none;
-            text-align: center;
-            font-size: 24px;
-        }
-
-        #download-button {
-            display: none;
-        }
-
-        .text-box {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: none;
+        .arrow:hover {
+            transform: translateY(3px);
         }
     </style>
 </head>
+
 <body>
-    <div class="center-text">
-        <h1 class="main-text">A Broken Website</h1>
-        <p class="sub-text">But maybe it is still useful for something</p>
+    <div class="section">
+        <h1>Title 1</h1>
+        <p>A square is drawn around a circle as shown in the diagram below on the left.
+            We shall call the blue shaded region the L-section.
+            A line is drawn from the bottom left of the square to the top right as shown in the diagram on the right.
+            We shall call the orange shaded region a concave triangle.</p>
+        <div class="arrow"></div>
     </div>
-    <input id="corner-input" type="text" placeholder="Type something..." class="text-box">
-    <p id="secret-message" class="text-box">This did something</p>
-    <button id="download-button" download="image.jpg" class="text-box">Download Image</button>
+    <div class="section">
+        <h1>1</h1>
+        <p>A square is drawn around a circle as shown in the diagram below on the left.
+            We shall call the blue shaded region the L-section.
+            A line is drawn from the bottom left of the square to the top right as shown in the diagram on the right.
+            We shall call the orange shaded region a concave triangle. It should be clear that the concave triangle
+            occupies exactly half of the L-section. </p>
+        <div class="arrow"></div>
+    </div>
+    <div class="section">
+        <h1>2</h1>
+        <p>Two circles are placed next to each other horizontally, a rectangle is drawn around both circles, and a line
+            is drawn from the bottom left to the top right as shown in the diagram below. This time the concave triangle
+            occupies approximately 36.46% of the L-section.</p>
+        <div class="arrow"></div>
+    </div>
+    <div class="section">
+        <h1>3</h1>
+        <p>If circles are placed next to each other horizontally, a rectangle is drawn around the n circles, and a line
+            is drawn from the bottom left to the top right, then it can be shown that the least value of n for which the
+            concave triangle occupies less than 10% of the L-section is n euqal to 15.</p>
+        <div class="arrow"></div>
+    </div>
+    <div class="section">
+        <h1>Title 3</h1>
+        <p>What is the least value of for which the concave triangle occupies less than 0.1% of the L-section?</p>
+        <div class="arrow"></div>
+    </div>
 
     <script>
-        document.addEventListener('mousemove', function(e) {
-            var input = document.getElementById('corner-input');
-            if (e.clientX <= 50 && e.clientY <= 50) {
-                input.style.display = 'block';
-            } else {
-                input.style.display = 'none';
-            }
-        });
-
-        document.getElementById('corner-input').addEventListener('input', function(e) {
-            if (e.target.value.toLowerCase() === 'nadar') { // Compare input value with 'nadar' in a case-insensitive manner
-                document.body.style.backgroundColor = 'white';
-                document.body.style.color = 'black';
-                document.getElementById('secret-message').style.display = 'block';
-                document.getElementById('download-button').style.display = 'block';
-            }
-        });
-        (function() {
-            var a = 5, b = 10, c = 15, d = 20, e = 25, f = 30, g = 35, h = 40, i = 45, j = 50;
-            var k = a + b + c + d + e + f + g + h + i + j;
-            var l = k * a * b * c * d * e * f * g * h * i * j;
-            var m = l / a / b / c / d / e / f / g / h / i / j;
-            var n = m % a % b % c % d % e % f % g % h % i % j;
-            var o = n ^ a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j;
-            var p = o & a & b & c & d & e & f & g & h & i & j;
-            var q = p | a | b | c | d | e | f | g | h | i | j;
-            var r = q << a << b << c << d << e << f << g << h << i << j;
-            var s = r >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j;
-            var t = s >>> a >>> b >>> c >>> d >>> e >>> f >>> g >>> h >>> i >>> j;
-            var u = t + a + b + c + d + e + f + g + h + i + j;
-            var v = u - a - b - c - d - e - f - g - h - i - j;
-            var w = v * a * b * c * d * e * f * g * h * i * j;
-            var x = w / a / b / c / d / e / f / g / h / i / j;
-            var y = x % a % b % c % d % e % f % g % h % i % j;
-            var z = y ^ a ^ b ^ c ^ d ^ e ^ f ^ g ^ h ^ i ^ j;
-        })();
-
-        document.getElementById('corner-input').addEventListener('input', function(e) {
-            if (e.target.value === 'nadar') {
-                document.body.style.backgroundColor = 'white';
-                document.body.style.color = 'black';
-                document.getElementById('secret-message').style.display = 'block';
-                document.getElementById('download-button').style.display = 'block';
-            }
+        const arrows = document.querySelectorAll('.arrow');
+        arrows.forEach(arrow => {
+            arrow.addEventListener('click', () => {
+                const nextSection = arrow.parentElement.nextElementSibling;
+                if (nextSection) {
+                    nextSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
 </body>
+
 </html>
