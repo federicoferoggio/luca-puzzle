@@ -19,6 +19,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 20px;
+            /* Add padding here */
         }
 
         .arrow {
@@ -35,6 +37,24 @@
 
         .arrow:hover {
             transform: translateY(3px);
+        }
+
+        .section {
+            /* ...existing styles... */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section:nth-child(1) {
+            background-image: url('shrek-smile.gif');
+        }
+
+        .section:nth-child(2) {
+            background-image: url('mattarella.gif');
+        }
+
+        .section:nth-child(3) {
+            background-image: url('image3.jpg');
         }
     </style>
 </head>
@@ -81,10 +101,11 @@
 
     <script>
         const arrows = document.querySelectorAll('.arrow');
-        arrows.forEach(arrow => {
+        arrows.forEach((arrow, index) => {
             arrow.addEventListener('click', () => {
                 const nextSection = arrow.parentElement.nextElementSibling;
                 if (nextSection) {
+                    nextSection.style.backgroundImage = `url('image${index + 2}.jpg')`;
                     nextSection.scrollIntoView({ behavior: 'smooth' });
                 }
             });
