@@ -25,14 +25,15 @@
 
         .arrow {
             margin-top: 20px;
-            width: 30px;
-            height: 30px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
+            width: 50px;
+            height: 50px;
             display: inline-block;
-            padding: 3px;
             cursor: pointer;
             transition: transform 0.3s;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><polyline points="10,20 25,35 40,20" stroke="white" stroke-width="4" fill="none" /></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .arrow:hover {
@@ -89,22 +90,22 @@
         <h1>Parte 2: I costraint a cazzo.</h1>
         <p> Ora, puoi dividere quello spazio rimanente in due part con un semplice divisore che va da un vertice
             all'altro, dividendo lo spazio in 2. Ma Ferox, che é un sadico, vuole che tu sempre solo con una diagonale,
-            tiri fuori una percentuale del 36.46% per inserire la tua Flaming Raging Sword of Doom.
+            tiri fuori una percentuale del 36.46% per inserire la tua Flaming Raging Sword of Doom (lo spazio viola deve essere il 36.46 di quello rosso).
         </p>
         <div class="arrow"></div>
     </div>
     <div class="section">
         <h1>Parte 3: La genialata sensatissima.</h1>
         <p> Hai un'idea: se aggiungi un'altra Bag of Hodling Adiacente, e tracci una linea da un angolo all'altro, la
-            percentuale di area necessaria per inserire la tua spada sarà esattamente quella che ti serve.
+            percentuale di area necessaria (viola) per inserire la tua spada sarà esattamente quella che ti serve.
         </p>
         <div class="arrow"></div>
     </div>
     <div class="section">
         <h1>Parte 4: La vera domanda</h1>
         <p> Ora, tu hai da inserire nella tua bag of holding la tua speranza di sopravvivere a Strahd, che occupa
-            esattamente lo 0,1% del suo spazio. Quante bag of holding devi mettere adiacenti per avere lo spazio
-            necessario, sempre usando una sola diagonale?</p>
+            esattamente lo 0,1% dello spazio rosso. Quante bag of holding devi mettere adiacenti per avere lo spazio
+            necessario (quello viola), sempre usando una sola diagonale?</p>
         <div class="arrow"></div>
     </div>
 
@@ -116,8 +117,10 @@
                 if (nextSection) {
                     nextSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bkg${index + 2}.gif')`;
                     nextSection.style.backgroundSize = 'cover';
-                    nextSection.style.backgroundPosition = 'center 50%';
+                    nextSection.style.backgroundPosition = 'center 70%';
                     nextSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    arrow.remove(); // Remove the arrow if there is no next section
                 }
             });
         });
