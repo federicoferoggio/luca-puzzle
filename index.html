@@ -5,7 +5,7 @@
     <title>Scrolling Webpage</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Monaco, sans-serif;
             margin: 0;
             padding: 0;
             color: white;
@@ -78,35 +78,51 @@
     <div class="section">
         <h1>Parte 1: Il problema.</h1>
         <p> Ferox, sotto l'effetto della cocaina e della birra, in pieno stress da sessione esami, decide di
-            reintrodurre per la settima volta delle regole per la Carrying capacity in DnD.
-            Conoscendo i suoi giocatori, sa che cerceranno immediatamente di rompere queste regole, e cerca di bloccarli
-            facendo specificare a ciascuno di loro la percentuale esatta che un oggetto occupa nel loro inventario.
-            Nella tua bag of holding, di froma quadrata, c'é un cilindro (che contiene i tuoi grossi tallari). Lo spazio
-            rimanente é quello colorato in rosso (gli altri angoli gli ingoriamo just cause).
+            reintrodurre per la settima volta delle regole per la Carrying Capacity in d&d.
+            In questa nuova iterazione di regole fallimentari, é richiesto che tu trovi lo spazio esatto nelle bag of
+            holding per inserire le tue armi e oggetti.
         </p>
         <div class="arrow"></div>
     </div>
     <div class="section">
         <h1>Parte 2: I costraint a cazzo.</h1>
-        <p> Ora, puoi dividere quello spazio rimanente in due part con un semplice divisore che va da un vertice
-            all'altro, dividendo lo spazio in 2. Ma Ferox, che é un sadico, vuole che tu sempre solo con una diagonale,
-            tiri fuori una percentuale del 36.46% per inserire la tua Flaming Raging Sword of Doom (lo spazio viola deve essere il 36.46 di quello rosso).
+        <p> Nella tua bag of holding, di froma quadrata, c'é un cilindro (che contiene i tuoi grossi tallari) che occupa
+            completamente lo spazio centrale. Lo spazio rimanente é quello colorato in rosso (gli altri angoli gli
+            ingoriamo just cause). Ora, puoi dividere quello
+            spazio rimanente in due parti con un semplice divisore che va da un vertice del quadrato all'altro,
+            dividendo lo spazio
+            in due (la parte rosa é il 50% di quella rossa).
         </p>
         <div class="arrow"></div>
     </div>
     <div class="section">
-        <h1>Parte 3: La genialata sensatissima.</h1>
-        <p> Hai un'idea: se aggiungi un'altra Bag of Hodling Adiacente, e tracci una linea da un angolo all'altro, la
-            percentuale di area necessaria (viola) per inserire la tua spada sarà esattamente quella che ti serve.
+        <h1>Parte 3: La genialata.</h1>
+        <p> Ma Ferox, che é un sadico ,vuole che tu, sempre solo con una diagonale, tiri fuori una percentuale del
+            36.46%
+            per inserire la tua Flaming Raging Sword of Doom (lo spazio viola deve essere il 36.46 di quello rosso). Hai
+            un'idea: se aggiungi un'altra Bag of Hodling adiacente, e tracci una
+            linea da un angolo all'altro, la percentuale di area trovata (viola) sarà esattamente quella che ti serve
+            per inserire la tua spada.
         </p>
         <div class="arrow"></div>
     </div>
     <div class="section">
         <h1>Parte 4: La vera domanda</h1>
         <p> Ora, tu hai da inserire nella tua bag of holding la tua speranza di sopravvivere a Strahd, che occupa
-            esattamente lo 0,1% dello spazio rosso. Quante bag of holding devi mettere adiacenti per avere lo spazio
-            necessario (quello viola), sempre usando una sola diagonale?</p>
-        <div class="arrow"></div>
+            esattamente lo 0,1% dello spazio rosso. Quante bag of holding devi mettere adiacenti in una singola riga per
+            avere lo spazio
+            necessario, sempre usando una sola diagonale (lo spazio viola deve essere lo 0,1% di quello rosso)? Il
+            numero intero che risponde a questa domanda, é quello che apre il lucchetto davanti a te.</p>
+        <button id="showTextButton" style="background: none; border: none; color: white; font-family: Monaco, sans-serif; text-decoration: underline; cursor: pointer;">Riassunto del problema</button>        <ul id="hiddenText" style="display: none;">
+            <li>Le Bag of Holding (quadrati) hanno tutte la stssa dimensione e possono essere messe solo in fila,
+                allineate fra di loro.</li>
+            <li>La diagonale va dal vertice in basso a sinistra a quello in alto a destra del parallelepipedo che si
+                forma.</li>
+            <li>Il cerchio é adiacente ai bordi del quadrato.</li>
+            <li>I quadrati sono sempre posti tangenti l'uno con l'altro, cosicché i cerchi al loro interno abbiano un
+                punto in comune.</li>
+            </ul>
+
     </div>
 
     <script>
@@ -123,6 +139,11 @@
                     arrow.remove(); // Remove the arrow if there is no next section
                 }
             });
+        });
+        const showTextButton = document.getElementById('showTextButton');
+        document.getElementById('showTextButton').addEventListener('click', function () {
+            document.getElementById('hiddenText').style.display = 'block';
+            showTextButton.remove(); // Remove the button after it is clicked
         });
     </script>
 </body>
