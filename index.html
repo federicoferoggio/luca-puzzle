@@ -42,19 +42,27 @@
         .section {
             /* ...existing styles... */
             background-size: cover;
-            background-position: center;
+            background-position: center 50%;
         }
 
         .section:nth-child(1) {
-            background-image: url('shrek-smile.gif');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bkg1.gif');
         }
 
         .section:nth-child(2) {
-            background-image: url('mattarella.gif');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bkg2.gif');
         }
 
         .section:nth-child(3) {
-            background-image: url('image3.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bkg3.gif');
+        }
+
+        .section:nth-child(4) {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bkg4.gif');
+        }
+
+        .section:nth-child(5) {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bkg5.gif');
         }
     </style>
 </head>
@@ -73,7 +81,7 @@
             Conoscendo i suoi giocatori, sa che cerceranno immediatamente di rompere queste regole, e cerca di bloccarli
             facendo specificare a ciascuno di loro la percentuale esatta che un oggetto occupa nel loro inventario.
             Nella tua bag of holding, di froma quadrata, c'é un cilindro (che contiene i tuoi grossi tallari). Lo spazio
-            rimanente é quello colorato in blu (gli altri angoli gli ingoriamo just cause).
+            rimanente é quello colorato in rosso (gli altri angoli gli ingoriamo just cause).
         </p>
         <div class="arrow"></div>
     </div>
@@ -106,7 +114,9 @@
             arrow.addEventListener('click', () => {
                 const nextSection = arrow.parentElement.nextElementSibling;
                 if (nextSection) {
-                    nextSection.style.backgroundImage = `url('image${index + 2}.jpg')`;
+                    nextSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('bkg${index + 2}.gif')`;
+                    nextSection.style.backgroundSize = 'cover';
+                    nextSection.style.backgroundPosition = 'center 50%';
                     nextSection.scrollIntoView({ behavior: 'smooth' });
                 }
             });
